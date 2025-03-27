@@ -53,11 +53,13 @@ const items = [
 export function AppSidebar() {
   const { logout } = useAuth();
 
+  const appName = process.env.PUBLIC_NEXT_APP_NAME || "Invoices";
+
   return (
     <Sidebar collapsible="icon" className="xl:flex z-50">
       <SidebarHeader className="text-2xl font-bold flex flex-row items-center gap-1 h-16">
         <BookText size={34} />
-        Invoices
+        {appName}
       </SidebarHeader>
       <Separator />
       <SidebarContent>
